@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const validator = require("validator");
-const { default: isEmail } = require("validator/lib/isemail");
+// const validator = require("validator");
+// const { default: isEmail } = require("validator/lib/isemail");
 
 const userSchema = mongoose.Schema({
   name: {
@@ -12,11 +12,11 @@ const userSchema = mongoose.Schema({
   email: {
     type: String,
     required: true,
-    validate(value) {
-      if (!validator.isEmail(value)) {
-        throw new Error("Invalid Email Id");
-      }
-    },
+    // validate(value) {
+    //   if (!validator.isEmail(value)) {
+    //     throw new Error("Invalid Email Id");
+    //   }
+    // },
   },
 
   phone: {

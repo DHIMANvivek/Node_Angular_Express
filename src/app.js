@@ -23,32 +23,16 @@ app.set('views' , templatesPath);
 hbs.registerPartials(partialsPath);
 app.use(express.urlencoded({extended:false}))
 
-app.get('/',(req , res)=>{
-    res.render('index');
-})
-
-
-const router = express.Router()
-
-router.get('/invoice', (req, res, next) => {
-    const stream = res.writeHead(200, {
-      'Content-Type': 'application/pdf',
-      'Content-Disposition': `attachment;filename=invoice.pdf`,
-    });
-    pdfService.buildPDF(
-      (chunk) => stream.write(chunk),
-      () => stream.end()
-    );
-  });
-  
-  module.exports = router;
+// app.get('/',(req , res)=>{
+//     res.render('index');
+// })
 
 
 
 
-app.get('/about-detail',(req , res)=>{
-    res.render('about-detail');
-})
+// app.get('/about-detail',(req , res)=>{
+//     res.render('about-detail');
+// })
 
 app.post('/contact' , async(req , res)=>{
     try{

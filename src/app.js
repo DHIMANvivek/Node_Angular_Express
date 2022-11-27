@@ -23,9 +23,9 @@ app.set('views' , templatesPath);
 hbs.registerPartials(partialsPath);
 app.use(express.urlencoded({extended:false}))
 
-// app.get('/',(req , res)=>{
-//     res.render('index');
-// })
+app.get('/',(req , res)=>{
+    res.render('index');
+})
 
 
 
